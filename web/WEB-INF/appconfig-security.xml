@@ -10,11 +10,10 @@
     <http auto-config="true">
         <intercept-url pattern="/profile/*" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
         <intercept-url pattern="/profile" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
-        <intercept-url pattern="/my_items/*" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
         <intercept-url pattern="/my_items" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
         <intercept-url pattern="/item/*" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
         <intercept-url pattern="/item" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
-        <intercept-url pattern="/new_item/*" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/new_item" access="hasRole('ROLE_USER')"/>
         <intercept-url pattern="/profiles/*" access="hasRole('ROLE_USER')"/>
         <intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/account/*" access="hasRole('ROLE_USER')"/>

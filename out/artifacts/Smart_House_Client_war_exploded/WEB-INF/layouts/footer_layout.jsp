@@ -22,7 +22,7 @@
             <div class="col-md-3 footer-brand animated fadeInLeft">
                 <h2><spring:message code="headerShop"/></h2>
                 <p> <spring:message code="text_netcufar_footer"/><br>
-                <p>© 2017, <spring:message code="text_all_rights"/></p>
+                <p>© 2019, <spring:message code="text_all_rights"/></p>
             </div>
             <div class="col-md-4 footer-nav animated fadeInUp">
                 <h4><spring:message code="Menu"/> </h4>

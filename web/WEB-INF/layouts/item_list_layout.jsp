@@ -39,8 +39,15 @@
             <c:forEach items="${items}" var="item">
                 <div class="col-sm-4">
                     <div class="product">
+                        <c:if test="${pageContext.request.userPrincipal.name == item.owners.iterator().next().username}">
+                            <div class="col-xs-12 text-left" style="margin-top: -4%">
+                                <a href="${contextPath}/item/edit/${item.id}">
+                                    <img src="${contextPath}/resources/img/gear.png">
+                                </a>
+                            </div>
+                        </c:if>
                         <div class="product-img">
-                            <a class="prod-img" href="#">
+                            <a class="prod-img" href="${contextPath}/item/${item.id}">
                                 <img src="../../resources/img/item.png"/>
                             </a>
                         </div>

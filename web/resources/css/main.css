@@ -167,8 +167,10 @@ p {
 
 
 .content{
-	margin-top: 150px;
+    margin-top: 150px;
+    margin-bottom: 7%;
 }
+
 .product {
 	background: #fff none repeat scroll 0 0;
 	border: 1px solid #c0c0c0;

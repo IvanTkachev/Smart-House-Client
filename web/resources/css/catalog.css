@@ -2,9 +2,6 @@ img {
     /*height: auto;*/
     max-width: 100%;
 }
-.content{
-    margin-top: 150px;
-}
 .product {
     background: #fff none repeat scroll 0 0;
     border: 1px solid #c0c0c0;
@@ -21,6 +18,7 @@ img {
 }
 .product-img {
     height: 200px;
+    margin-top: 6%;
 }
 .product-title {
     text-overflow: ellipsis;

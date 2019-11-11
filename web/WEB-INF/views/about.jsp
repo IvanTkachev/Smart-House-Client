@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="container" style="margin-top: 5%">
+    <div class="container" style="margin-top: 5%; margin-bottom: 7%">
         <div class="row centered">
             <div class="col-lg-6 col-lg-offset-2"></div>
             <h4>

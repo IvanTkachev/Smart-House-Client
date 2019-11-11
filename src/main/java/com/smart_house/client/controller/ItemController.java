@@ -95,12 +95,14 @@ public class ItemController {
         User owner = userService.findByUsername(username);
 //                user.add(owner);
         item.setName(request.getParameter("name"));
+        item.setSummary(request.getParameter("summary"));
+        item.setStatus("OFF");
         itemService.save(item);
         item = itemService.getByNameAndLink(item.getName(), item.getLink());
         owner.getOwnItems().add(item);
         userService.update(owner);
 //        }
-        return "redirect:my_home_items";
+        return "/my_items";
     }
 
     @RequestMapping(value = "/new_item", method = RequestMethod.GET)

@@ -38,23 +38,18 @@
                             <img src="${contextPath}/resources/img/placeholder-image.png"/>
                         </div>
                         <output id="list"></output>
-                    Добавьте файл!
-                    <input type="file" id="file" name="file"/>
+                    <spring:message code="ADD_FILE"/>
+                    <input type="file" accept="image/jpeg,jpg" id="file" name="file"/>
                 </label>
                 <span id="errorPhoto"></span>
             </div>
             <div class="col-lg-6 description-of-the-product">
                 <p class="name-of-product" style="font-family: Impact"><spring:message code="product.characteristics"/></p>
-                <div class="row" style="margin-bottom: 3%">
-                    <div class="col-sm-6">
-                        Information
-                    </div>
-                </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6" style="padding-top: 5%">
                     <div class="form-group row has-feedback">
                         <label class="label-attribute"><spring:message code="TITLE"/></label>
-                        <input class="form-control" id="name" name="name" pattern="^[0-9а-яА-ЯёЁa-zA-Z\s-]{1,70}$"
+                        <input class="form-control" id="name" name="name" pattern="^[0-9а-яА-ЯёЁa-zA-Z\s-]{1,45}$"
                                placeholder="<spring:message code="TitleDescription"/>"/>
                     </div>
                 </div>
@@ -64,9 +59,9 @@
                 <div class="col-md-7">
                     <div class="form-group row has-feedback">
                         <label class="label-attribute"><spring:message code="DESCRIPTION"/></label>
-                        <textarea id="description" class="form-control"
-                                  name="description" placeholder="<spring:message code="Description.description"/>"
-                        maxlength="140" rows="6"></textarea>
+                        <textarea id="summary" class="form-control"
+                                  name="summary" placeholder="<spring:message code="Description.description"/>"
+                        maxlength="60" rows="6"></textarea>
                     </div>
                 </div>
 

@@ -19,47 +19,13 @@
 
     <%@include file="../layouts/preloader.jsp"%>
     <%@include file="../layouts/high_menu_bar.jsp"%>
-
-
-    <div class="container content" style="margin-bottom: 20%">
-        <a class="btn btn-success" href="${contextPath}/new_item" role="button" style="margin-bottom: 1%; margin-left: 90%">
-                <spring:message code="AddProduct"/></a>
-
-
-        <div class="col-lg-12">
-            <div class="products">
-
-                <c:forEach items="${items}" var="doc">
-                    <div class="col-sm-4">
-                        <div class="product">
-
-                            <div class="col-xs-12 text-left">
-                                <a href="${contextPath}/item/edit/${doc.id}">
-                                    <img src="${contextPath}/resources/img/gear.png">
-                                </a>
-                            </div>
-
-                            <div class="product-img" style="margin-top: 4%">
-                                <a href="#">
-                                    <img src="../../resources/img/item.png"/>
-                                </a>
-
-                            </div>
-
-                            <p class="product-title">
-                                <a class="product-title" href="${contextPath}/item/${doc.id}">
-                                    <strong>${doc.name}</strong>
-                                </a>
-                            </p>
-
-                            <p class="product-desc">${doc.name}</p>
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-
-        </div>
+    <div>
+        <a class="btn btn-success" href="${contextPath}/new_item" role="button" style="margin-top: 7%; margin-bottom: -7%; margin-left: 70%">
+            <spring:message code="AddProduct"/>
+        </a>
     </div>
+
+    <%@include file="../layouts/item_list_layout.jsp"%>
     <%@include file="../layouts/footer_layout.jsp"%>
 
 </body>
