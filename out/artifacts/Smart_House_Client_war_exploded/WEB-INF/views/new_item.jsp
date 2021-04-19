@@ -54,14 +54,30 @@
                     </div>
                 </div>
 
-                <div id="wrapper-for-attributes" class="col-md-6"></div>
+                <div class="col-md-7" style="padding-top: 5%">
+                    <div class="form-group row has-feedback">
+                        <label class="label-attribute"><spring:message code="TYPE"/></label>
+                        <select name="type" id="type" class="form-control">
+                            <option value="SWITCH">Switch</option>
+                            <option value="DIMMER">Dimmer</option>
+                        </select>
+                    </div>
+                </div>
 
-                <div class="col-md-7">
+                <div class="col-md-8" style="padding-top: 5%">
+                    <div class="form-group row has-feedback">
+                        <label class="label-attribute"><spring:message code="TOPIC"/></label>
+                        <input class="form-control" id="topic" name="topic"
+                               placeholder="<spring:message code="Topic.description"/>"/>
+                    </div>
+                </div>
+
+                <div class="col-md-9" style="padding-top: 5%">
                     <div class="form-group row has-feedback">
                         <label class="label-attribute"><spring:message code="DESCRIPTION"/></label>
                         <textarea id="summary" class="form-control"
                                   name="summary" placeholder="<spring:message code="Description.description"/>"
-                        maxlength="60" rows="6"></textarea>
+                                  maxlength="60" rows="6"></textarea>
                     </div>
                 </div>
 

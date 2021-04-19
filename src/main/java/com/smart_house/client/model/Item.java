@@ -25,11 +25,14 @@ public class Item {
     @Column(name = "summary")
     private String summary;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "topic")
+    private String topic;
 
     @Column(name = "status")
-    private String status;
+    private int status;
+
+    @Column(name = "type")
+    private String type;
 
     public Long getId() {
         return id;
@@ -71,19 +74,27 @@ public class Item {
         this.summary = summary;
     }
 
-    public String getDescription() {
-        return description;
+    public String getTopic() {
+        return topic;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTopic(String description) {
+        this.topic = description;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

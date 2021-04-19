@@ -2,6 +2,8 @@ package com.smart_house.client.controller;
 
 
 import com.smart_house.client.service.ItemService;
+import com.smart_house.client.service.MqttService;
+import org.eclipse.paho.client.mqttv3.MqttException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,6 +26,9 @@ public class NavigationController {
     @Autowired
     private ItemService itemService;
 
+    @Autowired
+    private MqttService mqttService;
+
 
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String main(Model model, HttpServletRequest request) {
@@ -33,6 +38,11 @@ public class NavigationController {
         ResourceBundle bundle = ResourceBundle.getBundle("locales.messages", locale);
         model.addAttribute("keys", bundle.getKeys());
         model.addAttribute("items", itemService.getAllItems());
+        try {
+            mqttService.initService();
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
         return "/welcome";
     }
 

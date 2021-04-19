@@ -29,55 +29,67 @@
             </div>
 
         </div>
-        <div class="col-lg-6 description-of-the-product">
-            <p class="name-of-product">
-                <strong><spring:message code="product.characteristics"/></strong>
-            </p>
-            <div class="wrapper-for-ul">
-                <ul>
-                    <li><strong><spring:message code="product.description"/>:</strong></li>
-                    <li><strong><spring:message code="OWNER"/>:</strong></li>
-                    <li><strong><spring:message code="STATUS"/>:</strong></li>
+            <div class="col-lg-6 description-of-the-product">
+                <p class="name-of-product">
+                    <strong><spring:message code="product.characteristics"/></strong>
+                </p>
+                <div class="wrapper-for-ul">
+                    <ul>
+                        <li><strong><spring:message code="product.description"/>:</strong></li>
+                        <li><strong><spring:message code="OWNER"/>:</strong></li>
+                        <li><strong><spring:message code="STATUS"/>:</strong></li>
 
-                </ul>
-                <ul>
-                    <c:if test="${itemId.summary != null}">
-                        <li>${itemId.summary}</li>
-                    </c:if>
-                    <c:if test="${itemId.summary == null}">
-                        <li>—</li>
-                    </c:if>
-                    <c:forEach items="${itemId.owners}" var="owner">
-                        <li><a href="${contextPath}/account/${owner.username}">${owner.username}</a></li>
-                    </c:forEach>
-                    <c:if test="${itemId.status.equals('OFF')}">
-                        <li><spring:message code="STATUS_OFF"/></li>
-                    </c:if>
-                    <c:if test="${itemId.status.equals('ON')}">
-                        <li><spring:message code="STATUS_ON"/></li>
-                    </c:if>
+                    </ul>
+                    <ul>
+                        <c:if test="${itemId.summary != null}">
+                            <li>${itemId.summary}</li>
+                        </c:if>
+                        <c:if test="${itemId.summary == null}">
+                            <li>—</li>
+                        </c:if>
+                        <c:forEach items="${itemId.owners}" var="owner">
+                            <li><a href="${contextPath}/account/${owner.username}">${owner.username}</a></li>
+                        </c:forEach>
+                        <c:if test="${itemId.type.equals('SWITCH')}">
+                            <c:if test="${itemId.status == 0}">
+                                <li><spring:message code="STATUS_OFF"/></li>
+                            </c:if>
+                            <c:if test="${itemId.status == 1}">
+                                <li><spring:message code="STATUS_ON"/></li>
+                            </c:if>
+                        </c:if>
+                        <c:if test="${itemId.type.equals('DIMMER')}">
+                            <c:if test="${itemId.status == 0}">
+                                <li><spring:message code="STATUS_OFF"/></li>
+                            </c:if>
+                            <c:if test="${itemId.status != 0}">
+                                <li><spring:message code="STATUS_ON"/></li>
+                            </c:if>
+                        </c:if>
+                    </ul>
 
-                </ul>
-
-            </div>
-            <div style="padding-top: 13%; padding-left: 50%">
-                <c:if test="${itemId.status.equals('OFF')}">
-                    <a class="btn btn-success"
-                       href="${contextPath}/item/${itemId.id}"
-                       role="button" style="margin-bottom: 1%; margin-left: 90%">
+                </div>
+                <div style="padding-top: 13%; padding-left: 50%">
+                    <c:if test="${itemId.type.equals('SWITCH')}">
+                    <c:if test="${itemId.status == 0}">
+                    <button id="btn1" value="1" name="itemValue"  class="btn btn-success"
+                            style="margin-bottom: 1%; margin-left: 90%">
                         <spring:message code="On"/>
-                    </a>
-                </c:if>
-                <c:if test="${itemId.status.equals('ON')}">
-                    <a class="btn btn-warning"
-                       href="${contextPath}/item/${itemId.id}"
-                       role="button" style="margin-bottom: 1%; margin-left: 90%">
+                    </button>
+                    </c:if>
+                    <c:if test="${itemId.status == 1}">
+                    <button id="btn2" value="0" name="itemValue" class="btn btn-warning"
+                            style="margin-bottom: 1%; margin-left: 90%">
                         <spring:message code="Off"/>
-                    </a>
-                </c:if>
-
+                    </button>
+                    </c:if>
+                    </c:if>
+                    <c:if test="${itemId.type.equals('DIMMER')}">
+                    <input id="slider" class="slider_item" type="range" min="0" max="100"
+                           value="${itemId.status}">
+                    </c:if>
+                </div>
             </div>
-        </div>
     </div>
 </div>
 <%@include file="../layouts/footer_layout.jsp"%>
@@ -85,76 +97,111 @@
 
 <script>
 
-    $(item).on('click','.icon',function(event) {
-        event.preventDefault();
-        var productId = event.currentTarget.id;
+    jQuery(function($) {
+        btn1.onclick = function (event) {
+            changeItemValue(event.currentTarget.attributes[1].value)
+        }
+    });
 
+    jQuery(function($) {
+        btn2.onclick = function (event) {
+            changeItemValue(event.currentTarget.attributes[1].value)
+        };
+    });
+
+    jQuery(function($) {
+        slider.onmousemove = function (event) {
+            changeItemValue(this.value)
+        };
+        slider.ontouchmove = function (event) {
+            changeItemValue(this.value)
+        };
+    });
+
+    function changeItemValue(value) {
+        var itemValue = value;
         $.ajax({
-            url : "/add-product-to-favorites",
-            type : "GET",
-            dataType : 'json',
+            type : "POST",
             contentType : "application/json",
-            data : ({
-                productId : productId
-            }),
-            complete: function () {
-                $('#' + productId).addClass('icon-green').removeClass('icon');
+            url : "/item/update/${itemId.id}?${_csrf.parameterName}=${_csrf.token}",
+            data : itemValue,
+            dataType : 'json',
+            complete:function () {
+                // location.reload();
             }
         });
-    });
+    };
 
-    $(item).on('click','.icon-green',function(event) {
-        event.preventDefault();
-        var productId = event.currentTarget.id;
+    // $(item).on('click','.icon',function(event) {
+    //     event.preventDefault();
+    //     var productId = event.currentTarget.id;
+    //
+    //     $.ajax({
+    //         url : "/add-product-to-favorites",
+    //         type : "GET",
+    //         dataType : 'json',
+    //         contentType : "application/json",
+    //         data : ({
+    //             productId : productId
+    //         }),
+    //         complete: function () {
+    //             $('#' + productId).addClass('icon-green').removeClass('icon');
+    //         }
+    //     });
+    // });
 
-        $.ajax({
-            url : "/remove-product-from-favorites",
-            type : "GET",
-            dataType : 'json',
-            contentType : "application/json",
-            data : ({
-                productId : productId
-            }),
-            complete: function () {
-                $('#' + productId).addClass('icon').removeClass('icon-green');
-            }
-        });
-    });
+    // $(item).on('click','.icon-green',function(event) {
+    //     event.preventDefault();
+    //     var productId = event.currentTarget.id;
+    //
+    //     $.ajax({
+    //         url : "/remove-product-from-favorites",
+    //         type : "GET",
+    //         dataType : 'json',
+    //         contentType : "application/json",
+    //         data : ({
+    //             productId : productId
+    //         }),
+    //         complete: function () {
+    //             $('#' + productId).addClass('icon').removeClass('icon-green');
+    //         }
+    //     });
+    // });
 
-    $(item).on('click','#btn_accept',function(event) {
+    // $(item).on('click','#btn_accept',function(event) {
+    //
+    //     var btn = item.getElementsByName(event.currentTarget.name)[0].disabled=true;
+    //     var btn = item.getElementsByName(event.currentTarget.name)[1].disabled=false;
+    //
+    //     event.preventDefault();
+    //     var productId = event.currentTarget.name;
+    //     $.ajax({
+    //         url : "/not_moderated_accept",
+    //         type : 'GET',
+    //         dataType : 'json',
+    //         contentType : "application/json",
+    //         data : ({
+    //             productId : productId
+    //         })
+    //     });
+    // });
 
-        var btn = item.getElementsByName(event.currentTarget.name)[0].disabled=true;
-        var btn = item.getElementsByName(event.currentTarget.name)[1].disabled=false;
 
-        event.preventDefault();
-        var productId = event.currentTarget.name;
-        $.ajax({
-            url : "/not_moderated_accept",
-            type : 'GET',
-            dataType : 'json',
-            contentType : "application/json",
-            data : ({
-                productId : productId
-            })
-        });
-    });
-
-
-    $(item).on('click','#btn_deny',function(event) {
-        var btn = item.getElementsByName(event.currentTarget.name)[0].disabled=false;
-        var btn = item.getElementsByName(event.currentTarget.name)[1].disabled=true;
-
-        event.preventDefault();
-        var productId = event.currentTarget.name;
-        $.ajax({
-            url : "/not_moderated_deny",
-            type : 'GET',
-            dataType : 'json',
-            contentType : "application/json",
-            data : ({
-                productId : productId
-            })
-        });
-    });
+    // $(item).on('click','#btn_deny',function(event) {
+    //     var btn = item.getElementsByName(event.currentTarget.name)[0].disabled=false;
+    //     var btn = item.getElementsByName(event.currentTarget.name)[1].disabled=true;
+    //
+    //     event.preventDefault();
+    //     var productId = event.currentTarget.name;
+    //     $.ajax({
+    //         url : "/not_moderated_deny",
+    //         type : 'GET',
+    //         dataType : 'json',
+    //         contentType : "application/json",
+    //         data : ({
+    //             productId : productId
+    //         })
+    //     });
+    // });
 
 </script>

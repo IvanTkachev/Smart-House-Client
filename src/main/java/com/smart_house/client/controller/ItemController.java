@@ -1,10 +1,12 @@
 package com.smart_house.client.controller;
 
+import com.smart_house.client.enums.ItemType;
 import com.smart_house.client.model.Item;
 import com.smart_house.client.model.User;
 import com.smart_house.client.service.ItemService;
-import com.smart_house.client.service.GoogleDriveAPI;
+import com.smart_house.client.service.MqttService;
 import com.smart_house.client.service.UserService;
+import org.eclipse.paho.client.mqttv3.MqttException;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -17,11 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.*;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Controller
 public class ItemController {
@@ -32,6 +31,9 @@ public class ItemController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    MqttService mqttService;
 
     @RequestMapping(value = "my_items", method = RequestMethod.GET)
     public String getHomeItemsByUser(Model model) {
@@ -45,15 +47,10 @@ public class ItemController {
     @RequestMapping(value = "/item/{id}", method = RequestMethod.GET)
     public String getItemById(@PathVariable String id, Model model) {
         Item item = itemService.getItemById(Long.parseLong(id));
-        Hibernate.initialize(item.getOwners());
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String name = auth.getName();
-//        Sign sign = signService.getSignBySignerAndDocument(userService.findByUsername(name).getId().toString(),
-//                item.getId().toString());
-//        boolean signCheck = sign == null;
         if (item == null) {
             return "/error_page404";
         } else {
+            Hibernate.initialize(item.getOwners());
             model.addAttribute("itemId", item);
             return "/item_by_id";
         }
@@ -87,22 +84,29 @@ public class ItemController {
     public String addItem(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
-//        if(file!=null){
-        //                String id = GoogleDriveAPI.addFileToDrive(file);
         Item item = new Item();
         item.setLink("-1");
-//                Set user = new HashSet<>();
         User owner = userService.findByUsername(username);
-//                user.add(owner);
         item.setName(request.getParameter("name"));
+        item.setTopic(request.getParameter("topic"));
+        item.setType(request.getParameter("type"));
         item.setSummary(request.getParameter("summary"));
-        item.setStatus("OFF");
+        item.setStatus(0);
         itemService.save(item);
         item = itemService.getByNameAndLink(item.getName(), item.getLink());
         owner.getOwnItems().add(item);
         userService.update(owner);
-//        }
-        return "/my_items";
+        return "redirect: /my_items";
+    }
+
+    @Transactional
+    @RequestMapping(value = "/item/update/{id}", method = RequestMethod.POST)
+    public String updateItem(@PathVariable String id, @RequestBody String itemValue, HttpServletRequest request, Model model) throws MqttException {
+        Item item = itemService.getItemById(Long.parseLong(id));
+        item.setStatus(Integer.parseInt(itemValue));
+        mqttService.publishMessage(item.getTopic(), String.valueOf(item.getStatus()));
+        model.addAttribute("itemId", item);
+        return "/item_by_id";
     }
 
     @RequestMapping(value = "/new_item", method = RequestMethod.GET)

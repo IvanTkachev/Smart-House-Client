@@ -65,8 +65,6 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="${contextPath}/welcome"><spring:message code="headerShop"/></a>
-                <button type="submit" onclick="changeLocaleFunction('en')">EN</button>
-                <button type="submit" onclick="changeLocaleFunction('ru')">RU</button>
                 <c:if test="${pageContext.request.userPrincipal.name != null}">
                     <a class="navbar-text">
                         <spring:message code="headerWelcome"/>, ${pageContext.request.userPrincipal.name}
@@ -107,6 +105,10 @@
                         </div>
                         <%--a onmouseover="down()"href="${contextPath}/profile">Profile</a--%>
 
+                    </li>
+                    <li style="padding-left: 10px">
+                        <button type="submit" style="border: none; background-color: #222; color: #9d9d9d;" onclick="changeLocaleFunction('en')">EN</button>
+                        <button type="submit" style="border: none; background-color: #222; color: #9d9d9d;" onclick="changeLocaleFunction('ru')">RU</button>
                     </li>
 
                 </ul>

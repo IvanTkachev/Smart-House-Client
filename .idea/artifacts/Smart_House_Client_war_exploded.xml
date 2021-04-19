@@ -1,13 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="Smart-House-Client:war exploded">
-    <output-path>$PROJECT_DIR$/target/Smart-House-Client</output-path>
-    <properties id="maven-jee-properties">
-      <options>
-        <exploded>true</exploded>
-        <module>Smart-House-Client</module>
-        <packaging>war</packaging>
-      </options>
-    </properties>
+    <output-path>$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -88,11 +81,8 @@
           <element id="library" level="project" name="Maven: com.google.oauth-client:google-oauth-client-java6:1.23.0" />
           <element id="library" level="project" name="Maven: org.mortbay.jetty:jetty:6.1.26" />
           <element id="library" level="project" name="Maven: org.mortbay.jetty:jetty-util:6.1.26" />
-          <element id="library" level="project" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" />
+          <element id="library" level="project" name="Maven: org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0" />
         </element>
-      </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/Smart-House-Client/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="Smart-House-Client/web/Web" />
     </root>
