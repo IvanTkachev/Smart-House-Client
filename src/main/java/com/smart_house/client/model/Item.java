@@ -10,8 +10,8 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "summary")
+    private String summary;
 
     @Column(name = "link")
     private String link;
@@ -22,8 +22,8 @@ public class Item {
     )
     private Set<User> owners;
 
-    @Column(name = "summary")
-    private String summary;
+    @Column(name = "description")
+    private String description;
 
     @Column(name = "topic")
     private String topic;
@@ -42,12 +42,12 @@ public class Item {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getSummary() {
+        return summary;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public String getLink() {
@@ -66,12 +66,12 @@ public class Item {
         this.owners = owners;
     }
 
-    public String getSummary() {
-        return summary;
+    public String getDescription() {
+        return description;
     }
 
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getTopic() {

@@ -30,7 +30,6 @@ public class MqttServiceImpl implements MqttService {
             options.setConnectionTimeout(10);
             publisher.connect(options);
         }
-
     }
 
     @Override

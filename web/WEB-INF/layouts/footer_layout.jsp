@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/catalog.css">
 </head>
 <body>
-<div class="container">
+<%--<div class="container">--%>
     <!--<section style="height:80px;"></section>-->
     <!----------- Footer ------------>
     <footer class="footer-bs">
@@ -63,6 +63,6 @@
         </div>
     </footer>
 
-</div>
+<%--</div>--%>
 </body>
 </html>

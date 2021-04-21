@@ -10,40 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="563a1dca-baa5-4159-ba30-72d907734fd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/smart_house/client/enums/ItemType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/smart_house/client/service/MqttService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/smart_house/client/service/impl/MqttServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Dump20210419.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Smart_House_Client_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Smart_House_Client_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/resources/sketch_smart_house.ino" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/classes/locales/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/classes/locales/messages_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/classes/locales/messages_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/classes/locales/messages_ru.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/layouts/high_menu_bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/layouts/high_menu_bar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/layouts/footer_layout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/layouts/footer_layout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/layouts/item_list_layout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/layouts/item_list_layout.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/views/item_by_id.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/views/item_by_id.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/views/new_item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/WEB-INF/views/new_item.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/resources/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Smart_House_Client_war_exploded/resources/css/footer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/smart_house/client/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smart_house/client/controller/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smart_house/client/controller/NavigationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smart_house/client/controller/NavigationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smart_house/client/enums/ItemStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smart_house/client/enums/ItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smart_house/client/enums/ItemType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/smart_house/client/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smart_house/client/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/locales/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/locales/messages_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/locales/messages_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/locales/messages_ru.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Smart-House-Client/WEB-INF/classes/Dump20191217.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Smart-House-Client/WEB-INF/classes/beans.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Smart-House-Client/WEB-INF/classes/database.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Smart-House-Client/WEB-INF/classes/gmail.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Smart-House-Client/WEB-INF/classes/locales/messages_en.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Smart-House-Client/WEB-INF/classes/locales/messages_ru.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Smart-House-Client/WEB-INF/classes/validation.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Smart-House-Client/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/locales/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/locales/messages_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/locales/messages_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/locales/messages_ru.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/layouts/high_menu_bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/layouts/high_menu_bar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smart_house/client/repository/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smart_house/client/repository/ItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smart_house/client/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smart_house/client/service/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smart_house/client/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smart_house/client/service/impl/ItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smart_house/client/service/impl/MqttServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smart_house/client/service/impl/MqttServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/layouts/footer_layout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/layouts/footer_layout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/layouts/item_list_layout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/layouts/item_list_layout.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/item_by_id.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/item_by_id.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/new_item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/new_item.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/css/footer.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +140,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -172,11 +157,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Workspace\nan\Smart-House-Client\web\resources" />
+      <recent name="E:\Workspace\nan\Smart-House-Client\src\main\resources" />
       <recent name="C:\Workspace\other\nan\OIT\Smart-House-Client\web\resources" />
       <recent name="C:\Workspace\other\nan\OIT\Smart-House-Client\src\main\resources\locales" />
       <recent name="C:\Workspace\other\nan\OIT\Smart-House-Client\src\main\java\com\smart_house\client\validator" />
-      <recent name="C:\Workspace\other\nan\OIT\Smart-House-Client\src\main\java\com\smart_house\client\service\impl" />
-      <recent name="C:\Workspace\other\nan\OIT\Smart-House-Client\src\main\java\com\smart_house\client\service\security" />
     </key>
   </component>
   <component name="RunManager">
@@ -311,7 +296,7 @@
       <workItem from="1576602884347" duration="9649000" />
       <workItem from="1618654413551" duration="26522000" />
       <workItem from="1618758255790" duration="4000000" />
-      <workItem from="1618831748521" duration="634000" />
+      <workItem from="1618831748521" duration="17707000" />
     </task>
     <servers />
   </component>
@@ -322,34 +307,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/smart_house/client/controller/ItemController.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/smart_house/client/service/impl/MqttServiceImpl.java</url>
-          <line>43</line>
+          <line>42</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/smart_house/client/service/impl/MqttServiceImpl.java</url>
-          <line>37</line>
+          <line>36</line>
           <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/smart_house/client/controller/ItemController.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/smart_house/client/controller/ItemController.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/smart_house/client/controller/ItemController.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

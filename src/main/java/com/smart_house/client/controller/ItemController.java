@@ -87,13 +87,17 @@ public class ItemController {
         Item item = new Item();
         item.setLink("-1");
         User owner = userService.findByUsername(username);
-        item.setName(request.getParameter("name"));
         item.setTopic(request.getParameter("topic"));
         item.setType(request.getParameter("type"));
         item.setSummary(request.getParameter("summary"));
-        item.setStatus(0);
+        item.setDescription(request.getParameter("description"));
+        if(ItemType.SENSOR.toString().equals(item.getType())) {
+            item.setStatus(1);
+        } else {
+            item.setStatus(0);
+        }
         itemService.save(item);
-        item = itemService.getByNameAndLink(item.getName(), item.getLink());
+        item = itemService.getBySummary(item.getSummary());
         owner.getOwnItems().add(item);
         userService.update(owner);
         return "redirect: /my_items";

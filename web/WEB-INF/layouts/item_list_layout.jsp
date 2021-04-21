@@ -54,11 +54,11 @@
 
                         <p class="product-title">
                             <a class="product-title" href="${contextPath}/item/${item.id}">
-                                <strong>${item.name}</strong>
+                                <strong>${item.summary}</strong>
                             </a>
                         </p>
 
-                        <p class="product-summary">${item.summary}</p>
+                        <p class="product-summary">${item.description}</p>
                     </div>
                 </div>
             </c:forEach>

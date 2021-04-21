@@ -49,7 +49,7 @@
                 <div class="col-md-6" style="padding-top: 5%">
                     <div class="form-group row has-feedback">
                         <label class="label-attribute"><spring:message code="TITLE"/></label>
-                        <input class="form-control" id="name" name="name" pattern="^[0-9а-яА-ЯёЁa-zA-Z\s-]{1,45}$"
+                        <input class="form-control" id="summary" name="summary" pattern="^[0-9а-яА-ЯёЁa-zA-Z\s-]{1,45}$"
                                placeholder="<spring:message code="TitleDescription"/>"/>
                     </div>
                 </div>
@@ -60,6 +60,7 @@
                         <select name="type" id="type" class="form-control">
                             <option value="SWITCH">Switch</option>
                             <option value="DIMMER">Dimmer</option>
+                            <option value="SENSOR">Sensor</option>
                         </select>
                     </div>
                 </div>
@@ -75,8 +76,8 @@
                 <div class="col-md-9" style="padding-top: 5%">
                     <div class="form-group row has-feedback">
                         <label class="label-attribute"><spring:message code="DESCRIPTION"/></label>
-                        <textarea id="summary" class="form-control"
-                                  name="summary" placeholder="<spring:message code="Description.description"/>"
+                        <textarea id="description" class="form-control"
+                                  name="description" placeholder="<spring:message code="Description.description"/>"
                                   maxlength="60" rows="6"></textarea>
                     </div>
                 </div>

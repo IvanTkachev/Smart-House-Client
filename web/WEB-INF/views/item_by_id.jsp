@@ -22,7 +22,7 @@
 <div class="container content">
     <div class="row wrapper-for-product-in-productbyid">
         <div class="col-lg-4">
-            <h2><strong>${itemId.name}</strong></h2>
+            <h2><strong>${itemId.summary}</strong></h2>
 
             <div class="product-img-1">
                 <img src="../../resources/img/item.png"/>
@@ -37,19 +37,21 @@
                     <ul>
                         <li><strong><spring:message code="product.description"/>:</strong></li>
                         <li><strong><spring:message code="OWNER"/>:</strong></li>
+                        <li><strong><spring:message code="TOPIC"/>:</strong></li>
                         <li><strong><spring:message code="STATUS"/>:</strong></li>
 
                     </ul>
                     <ul>
-                        <c:if test="${itemId.summary != null}">
-                            <li>${itemId.summary}</li>
+                        <c:if test="${itemId.description != null}">
+                            <li>${itemId.description}</li>
                         </c:if>
-                        <c:if test="${itemId.summary == null}">
+                        <c:if test="${itemId.description == null}">
                             <li>—</li>
                         </c:if>
                         <c:forEach items="${itemId.owners}" var="owner">
                             <li><a href="${contextPath}/account/${owner.username}">${owner.username}</a></li>
                         </c:forEach>
+                        <li>${itemId.topic}</li>
                         <c:if test="${itemId.type.equals('SWITCH')}">
                             <c:if test="${itemId.status == 0}">
                                 <li><spring:message code="STATUS_OFF"/></li>

@@ -12,5 +12,5 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     List<Item> findByOwners(User user);
 
-    Item getByNameAndLink(String name, String link);
+    Item getBySummary(String summary);
 }

@@ -44,8 +44,8 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public Item getByNameAndLink(String name, String link) {
-        return itemRepository.getByNameAndLink(name, link);
+    public Item getBySummary(String summary) {
+        return itemRepository.getBySummary(summary);
     }
 
 }

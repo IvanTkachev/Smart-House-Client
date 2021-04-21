@@ -16,5 +16,5 @@ public interface ItemService {
 
     void save(Item item);
 
-    Item getByNameAndLink(String name, String link);
+    Item getBySummary(String name);
 }
